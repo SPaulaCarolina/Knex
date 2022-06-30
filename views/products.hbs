@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="m-auto col-10">
+            <h2 class="text-info">LISTA DE PRODUCTOS:</h2>
+            {{#if listExist}}
+                <h4>NO SE GUARDARON PRODUCTOS.</h4>
+            {{else}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each products }}
+                            <tr>
+                                <td scope="row">{{this.id}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.category}}</td>
+                                <td>${{this.price}}</td>
+                                <td><img src="{{this.img}}" width="40px"></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{/if}}
+            <button type="button" class="btn btn-outline-info"><a href="/">BACK</a></button>
+        </div>            
+    </div>
+</div>
